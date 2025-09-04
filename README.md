@@ -11,6 +11,11 @@ A simple **interactive drum machine** built with HTML, CSS, and JavaScript. Play
 - Visual feedback for each pad when pressed.
 - Interactive help menu with instructions.
 
+## 📝 Notes
+
+- Works best on **desktop or laptop screens**. Mobile screens may not display all controls properly.
+- All sounds are loaded from FreeCodeCamp’s free audio resources.
+
 ## 🛠️ Technologies Used
 
 - HTML5  
