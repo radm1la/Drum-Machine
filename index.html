@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Drum Machine</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=mLVQmrgtkThz&format=png&color=000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!-- Drum Machine Container -->
+    <div id="drum-machine">
+
+      <!-- Pad Bank: Contains all drum pads -->
+      <div id="pad-bank">
+
+        <!-- Each drum pad is mapped to a key and audio clip -->
+        <div class="drum-pad" id="key-1">Q
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3" id="Q"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-2">W
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3" id="W"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-3">E
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3" id="E"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-4">A
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3" id="A"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-5">S
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3" id="S"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-6">D
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3" id="D"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-7">Z
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3" id="Z"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-8">X
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3" id="X"></audio>
+        </div>
+
+        <div class="drum-pad" id="key-9">C
+          <audio class="clip" src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3" id="C"></audio>
+        </div>
+      </div>
+
+      <!-- Controls Section -->
+      <div id="controls">
+
+        <!-- Helper / Instructions Icon -->
+        <div id="helper-icon">
+          <img src="https://img.icons8.com/?size=100&id=16140&format=png&color=ffffff" width="40" height="40">
+        </div>
+        
+        <!-- Display shows currently played sound -->
+        <p id="display"></p>
+
+        <!-- Recording / Playback Buttons -->
+        <div id="buttons">
+          <div id="record">
+            <img src="https://img.icons8.com/?size=100&id=85775&format=png&color=ffffff" width="50" height="50">
+          </div>
+          <div id="play">
+            <img src="https://img.icons8.com/?size=100&id=59862&format=png&color=ffffff" width="50" height="50">
+          </div>
+          <div id="clear">
+            <img src="https://img.icons8.com/?size=100&id=99950&format=png&color=ffffff" width="50" height="50">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

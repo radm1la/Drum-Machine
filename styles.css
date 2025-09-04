@@ -1,0 +1,224 @@
+/* ==============================
+   Base Layout
+============================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #12161e;
+}
+
+/* ==============================
+   Drum Machine Container
+============================== */
+#drum-machine {
+  width: 700px;
+  height: 400px;
+  background-color: #1e2533;
+  position: relative;
+  border-radius: 10px;
+
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ==============================
+   Animated Border (Conic Gradient)
+============================== */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+#drum-machine::after,
+#drum-machine::before {
+  content: "";
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff00c8,
+    #00b3ff,
+    #00ff94,
+    #ff00c8
+  );
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+#drum-machine::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+/* Spin animation for border */
+@keyframes spin {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+
+/* ==============================
+   Drum Pads
+============================== */
+.drum-pad {
+  width: 90px;
+  height: 90px;
+  background-color: #2c3343;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Glow effect around pads */
+.drum-pad::after {
+  content: "";
+  position: absolute;
+  height: 107%;
+  width: 102%;
+  background-image: radial-gradient(circle, #00ff94, #00b3ff);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Pad active state (click or JS toggle) */
+.drum-pad:active,
+.drum-pad.active {
+  z-index: 0;
+  box-shadow: 20px 0 100px #c600f79e, -20px 0 100px #ad04d775;
+  color: black;
+}
+
+/* ==============================
+   Pad Bank Layout (3x3 grid)
+============================== */
+#pad-bank {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 230px;
+  justify-items: start;
+  align-content: start;
+  padding: 50px;
+}
+
+/* ==============================
+   Display Panel
+============================== */
+#display {
+  background-color: #2c3343;
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 110px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* ==============================
+   Controls Section
+============================== */
+#controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Buttons Row */
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Helper Icon (top-right corner) */
+#helper-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* ==============================
+   Helper Popup Text
+============================== */
+#helper-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  
+  width: 680px;
+  max-width: 90%;      
+  height: auto;          
+  background: linear-gradient(145deg, #2c3343, #1e2533);
+  color: #ffffff;
+  
+  padding: 20px 25px;
+  border-radius: 15px;
+  font-size: 1rem;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: none; /* hidden by default */
+  z-index: 1000;
+}
+
+#helper-text h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffcc00; 
+}
+
+#helper-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#helper-text li {
+  margin: 10px 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+/* Custom bullet style */
+#helper-text li::before {
+  content: "•"; 
+  position: absolute;
+  left: 10px;
+  color: #ff4c4c; 
+  font-size: 1.3rem;
+}
+
+/* Highlighted keywords */
+#helper-text .highlight {
+  color: #ffcc00;
+  font-weight: bold;
+}
