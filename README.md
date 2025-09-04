@@ -20,7 +20,10 @@ A simple **interactive drum machine** built with HTML, CSS, and JavaScript. Play
 
 - HTML5  
 - CSS3 (Flexbox, Grid, Animations)  
-- JavaScript (DOM manipulation, event listeners, setTimeout)  
+- JavaScript (DOM manipulation, event listeners, setTimeout)
+
+<img width="1399" height="829" alt="image" src="https://github.com/user-attachments/assets/73180cbd-1927-428a-a73f-59a426c0f321" />
+
 
 ## 🚀 How to Use
 
